@@ -1,0 +1,49 @@
+/** Clase que representa un computador */
+public class Computadora {
+	// Campos de datos
+	private String fabricante;
+	private String procesador;
+	private double totalRAM;
+	private int totalDisco;
+	private double velocidadProcesador;
+
+	// Metodos
+	/**
+	 * Inicia la compuradora con los elementos definidos
+	 * @param fab       Fabricante del equipo
+	 * @param procesador Tipo de procesador
+	 * @param ram       Tamaño de la RAM
+	 * @param disco      Tamaño del disco
+	 * @param velProc Velocidad del procesador
+	 */
+	public Computadora(String fab, String procesador, double ram, int disco, double velProc) {
+		fabricante = fab;
+		this.procesador = procesador;
+		totalRAM = ram;
+		totalDisco = disco;
+		velocidadProcesador = velProc;
+	}
+
+	public double rendimientoComputadora() {
+		return totalRAM * velocidadProcesador;
+	}
+
+	public double getRamSize() {
+		return totalRAM;
+	}
+
+	public double getProcessorSpeed() {
+		return velocidadProcesador;
+	}
+
+	public int getDiskSize() {
+		return totalDisco;
+	}
+
+	// Insert other accessor and modifier methods here.
+	public String toString() {
+		String result = "Manufacturer: " + fabricante + "\nCPU: " + procesador + "\nRAM: " + totalRAM + " gigabytes"
+				+ "\nDisk: " + totalDisco + " gigabytes" + "\nProcessor speed: " + velocidadProcesador + " gigahertz";
+		return result;
+	}
+}

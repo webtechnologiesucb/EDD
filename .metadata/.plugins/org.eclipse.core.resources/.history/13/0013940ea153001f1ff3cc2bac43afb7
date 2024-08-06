@@ -1,0 +1,21 @@
+import java.util.Random;
+
+public class Main {
+	public static void main(String args[]) {
+		// Crear una instancia de la clase Random
+        Random random = new Random();
+        // Definir el tamaño del array
+        int size = 10;
+        // Crear el array de enteros
+        int[] vec = new int[size];
+        // Llenar el array con números aleatorios
+        for (int i = 0; i < size; i++) {
+        	vec[i] = random.nextInt(100); // Genera un número aleatorio entre 0 y 99
+        }
+        // Imprimir los elementos del array
+        System.out.print("Array de 10 elementos aleatorios: ");
+        for(int valor : vec) {
+            System.out.print(valor + " ");
+        }
+	}
+}

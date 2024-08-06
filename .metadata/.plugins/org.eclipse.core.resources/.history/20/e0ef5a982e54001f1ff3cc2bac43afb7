@@ -1,0 +1,50 @@
+/** Clase que representa un computador */
+public class Computador {
+	// Campos de datos
+	private String fabricante;
+	private String procesador;
+	private double totalRAM;
+	private int totalDisco;
+	private double velocidadProcesador;
+
+	// Metodos
+	/**
+	 * Initializes a Computer object with all properties specified.
+	 * 
+	 * @param man       The computer manufacturer
+	 * @param processor The processor type
+	 * @param ram       The RAM size
+	 * @param disk      The disk size
+	 * @param procSpeed The processor speed
+	 */
+	public Computador(String man, String processor, double ram, int disk, double procSpeed) {
+		fabricante = man;
+		this.procesador = processor;
+		totalRAM = ram;
+		totalDisco = disk;
+		velocidadProcesador = procSpeed;
+	}
+
+	public double computePower() {
+		return totalRAM * velocidadProcesador;
+	}
+
+	public double getRamSize() {
+		return totalRAM;
+	}
+
+	public double getProcessorSpeed() {
+		return velocidadProcesador;
+	}
+
+	public int getDiskSize() {
+		return totalDisco;
+	}
+
+	// Insert other accessor and modifier methods here.
+	public String toString() {
+		String result = "Manufacturer: " + fabricante + "\nCPU: " + procesador + "\nRAM: " + totalRAM + " gigabytes"
+				+ "\nDisk: " + totalDisco + " gigabytes" + "\nProcessor speed: " + velocidadProcesador + " gigahertz";
+		return result;
+	}
+}

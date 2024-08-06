@@ -1,0 +1,43 @@
+import java.util.Random;
+
+public class MPMatrix {
+	// Definir el tamaño del array bidimensional y el límite superior 
+    private int filas;
+    private int columnas;
+    private int limite;
+    private int[][] array;
+    
+    public MPMatrix() {
+    	this.filas = 4;
+    	this.columnas = 4;
+    	this.limite = 100;
+    	this.array = generadorAleatorio(filas, columnas, limite);
+    }
+    
+    public MPMatrix(int filas, int columnas, int limite) {
+    	this.filas = filas;
+    	this.columnas = columnas;
+    	this.limite = limite;
+    	this.array = generadorAleatorio(filas, columnas, limite);
+    }
+
+	public int[][] generadorAleatorio(int filas, int columnas, int limite) {
+        Random random = new Random();
+        array = new int[filas][columnas];
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                array[i][j] = random.nextInt(limite);
+            }
+        }
+        return array;
+    }
+    
+    public void imprimir() {
+        for (int[] row : array) {
+            for (int element : row) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
+        }
+    }
+}

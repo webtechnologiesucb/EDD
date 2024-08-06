@@ -1,0 +1,4 @@
+/** Clase que representa una computadora portatil. */
+public class Portatil extends Computadora {
+
+}

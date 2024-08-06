@@ -1,0 +1,58 @@
+import java.util.Random;
+
+public class Main {
+
+	public static void operacionTrad() {
+		Random random = new Random();
+		int total = 1000; // Definir el tamaño del array
+		int[] vec = new int[total];
+
+		for (int i = 0; i < vec.length; i++) {
+			vec[i] = random.nextInt(100); // Genera un número aleatorio entre 0 y 99
+		}
+		// Imprimir los elementos del array
+		System.out.print("Array de 1000 elementos aleatorios: ");
+		for (int valor : vec) {
+			System.out.print(valor + " ");
+		}
+		System.out.println("");
+	}
+
+	// Método para intercambiar valores usando una clase auxiliar para simular
+	// referencias
+	public static void intercambiar(NumeroEntero x, NumeroEntero y) {
+		if (x.valor == y.valor) { // Verifica si los valores son iguales
+			return;
+		}
+
+		x.valor = x.valor + y.valor;
+		y.valor = x.valor - y.valor;
+		x.valor = x.valor - y.valor;
+
+		/* Con multiplicacion y division
+		 * x.valor = x.valor * y.valor; 
+		 * y.valor = x.valor / y.valor; 
+		 * x.valor = x.valor / y.valor;
+		 */
+		/* Con el operador xor ^
+		 * x.valor = x.valor ^ y.valor; 
+		 * y.valor = x.valor ^ y.valor; 
+		 * x.valor = x.valor ^ y.valor;
+		 */
+	}
+
+	public static void main(String args[]) {
+		System.out.println("Usando clase optimizada");
+		MPArray oVector = new MPArray();
+		oVector.imprimir();
+		System.out.println("Usando programacion tradicional");
+		operacionTrad();
+		System.out.println("Intercambio optimo de 2 numeros");
+		NumeroEntero oNum1 = new NumeroEntero(5);
+		NumeroEntero oNum2 = new NumeroEntero(8);
+		// Llamar al método swap
+		intercambiar(oNum1, oNum2);
+		// Imprimir los valores intercambiados
+		System.out.println(oNum1.valor + " " + oNum2.valor);
+	}
+}
