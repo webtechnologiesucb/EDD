@@ -7,16 +7,20 @@ public class Main {
 		Random random = new Random();
 		int total = 1000; //Definir el tamaño del array
 		int[] vec = new int[total];
-
+		
 		for (int i = 0; i < vec.length; i++) {
 			vec[i] = random.nextInt(100); //Genera un número aleatorio entre 0 y 99
 		}
 		//Imprimir los elementos del array
 		System.out.println("Array de 1000 elementos aleatorios: ");
+		long inicio = System.nanoTime();
 		for (int valor : vec) {
 			System.out.print(valor + "\t");
 		}
 		System.out.println("");
+		long fin = System.nanoTime();
+		long duracion = (fin - inicio) / 1000;
+		System.out.println("Duracion tradicional: " + duracion + " ms.");
 	}
 
 	// Método para intercambiar valores usando una clase auxiliar 
@@ -44,7 +48,11 @@ public class Main {
 	public static void main(String args[]) {
 		System.out.println("Vectores usando clase optimizada");
 		MPArray oVector = new MPArray(1000, 100);
+		long inicio = System.nanoTime();
 		oVector.imprimir();
+		long fin = System.nanoTime();
+		long duracion = (fin - inicio) / 1000;
+		System.out.println("Duracion optimizado: " + duracion + " ms.");
 		
 		System.out.println("Vectores usando programacion tradicional");
 		operacionTrad();

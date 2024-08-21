@@ -8,4 +8,5 @@
     <fullyQualifiedTypeName name="Computadora"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="com.ucb.developer.VectorX"/>
 </qualifiedTypeNameHistroy>
