@@ -112,6 +112,15 @@ public class Main1 {
             array[k++] = right[j++];
         }
     }
+    
+    // Función recursiva para calcular el factorial de n
+    public static int factorial(int n) {
+        if (n == 0 || n == 1) { 
+            return 1; // Caso base: 0! = 1 y 1! = 1
+        } else {
+            return n + factorial(n - 1); // Llamada recursiva  O(n)
+        }
+    }
 
     // Ejemplo de uso
     public static void main(String[] args) {
