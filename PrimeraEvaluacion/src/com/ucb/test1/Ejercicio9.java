@@ -10,7 +10,7 @@ class SerieI {
 	Set<Integer> serie;
 	ArrayList<Integer> listaSerie;
 	int limite;
-	// 1,2,4,5,8,9,10,13,16,17,...
+	// 1,2,4,5,8,9,10,13,16,17,18,...
 
 	public SerieI(int n) {
 		this.limite = n;
