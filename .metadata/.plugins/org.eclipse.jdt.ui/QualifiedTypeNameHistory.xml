@@ -3,7 +3,6 @@
     <fullyQualifiedTypeName name="java.util.stream.IntStream"/>
     <fullyQualifiedTypeName name="MPArray"/>
     <fullyQualifiedTypeName name="NumeroEntero"/>
-    <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="MPMatrix"/>
     <fullyQualifiedTypeName name="Computadora"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
@@ -20,4 +19,9 @@
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="javafx.application.Application"/>
+    <fullyQualifiedTypeName name="javafx.scene.paint.Color"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="javafx.scene.canvas.GraphicsContext"/>
+    <fullyQualifiedTypeName name="java.util.Objects"/>
 </qualifiedTypeNameHistroy>
