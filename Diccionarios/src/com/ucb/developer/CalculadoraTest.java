@@ -16,5 +16,19 @@ class CalculadoraTest {
 	void testSumar() {
 		assertEquals(5, calc.sumar(2, 3));
 	}
-
+	
+	@Test
+	void testRestar() {
+		assertEquals(-1, calc.restar(2, 3));
+	}
+	
+	@Test
+	void testMultiplicar() {
+		assertEquals(6, calc.multiplicar(2, 3));
+	}
+	
+	@Test
+	void testDividir() {
+		assertEquals(0, calc.dividir(2, 3));
+	}
 }
