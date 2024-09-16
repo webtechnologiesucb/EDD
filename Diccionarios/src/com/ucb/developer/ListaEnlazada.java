@@ -329,7 +329,6 @@ public class ListaEnlazada<T> {
         while (actual1 != null && actual2 != null) {
             if (!Objects.equals(actual1.dato, actual2.dato)) 
                 return false;
-            
             actual1 = actual1.sig;
             actual2 = actual2.sig;
         }
