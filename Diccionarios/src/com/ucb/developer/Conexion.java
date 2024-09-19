@@ -11,7 +11,7 @@ public class Conexion {
     private Connection connection;
     private String url = "jdbc:mysql://localhost:3306/sakila";
     private String username = "root";
-    private String password = "";//"admin";
+    private String password = ""; //"admin";
 
     private Conexion() throws SQLException {
         try {

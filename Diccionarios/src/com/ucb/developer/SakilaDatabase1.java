@@ -9,8 +9,7 @@ public class SakilaDatabase1 {
 	public static void main(String[] args) {
         LinkedList<Country> countries = new LinkedList<>();
         try {
-            // Conectar a la base de datos
-        	int countryId = 0;
+         	int countryId = 0;
         	Connection con = Conexion.getInstance().getConnection();
         	String consulta = "SELECT country_id, country, last_update " 
         			+ "FROM country " 
@@ -19,7 +18,7 @@ public class SakilaDatabase1 {
     		pst.setInt(1, countryId);
     		ResultSet rs = pst.executeQuery();
     		System.out.println(pst.toString());
-            // Leer los datos y almacenarlos en la LinkedList
+            
             while (rs.next()) {
             	Country c = new Country();
             	c.setCountryId(rs.getInt("country_id"));
@@ -27,11 +26,10 @@ public class SakilaDatabase1 {
                 c.setLastUpdate(rs.getDate("last_update"));
                 countries.add(c);
             }
-            // Cerrar la conexión
+
             rs.close();
             pst.close();
             con.close();
-            // Mostrar los datos
             for (Country c : countries) {
                 System.out.println(c);
             }
