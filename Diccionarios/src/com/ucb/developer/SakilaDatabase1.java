@@ -26,7 +26,6 @@ public class SakilaDatabase1 {
                 c.setLastUpdate(rs.getDate("last_update"));
                 countries.add(c);
             }
-
             rs.close();
             pst.close();
             con.close();
