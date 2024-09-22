@@ -6,6 +6,17 @@ import java.sql.ResultSet;
 import java.util.LinkedList;
 
 public class SakilaDatabase1 {
+	public static void leerRecursivamente(LinkedList<Country> lista, int index) {
+        // Caso base: índice igual a tamaño de lista
+        if (index == lista.size()) {
+            return;
+        }
+        // Imprimir el elemento actual
+        System.out.println(lista.get(index));
+        // Llamar recursivamente al siguiente índice
+        leerRecursivamente(lista, index + 1);
+    }
+	
 	public static void main(String[] args) {
         LinkedList<Country> countries = new LinkedList<>();
         try {
@@ -29,9 +40,7 @@ public class SakilaDatabase1 {
             rs.close();
             pst.close();
             con.close();
-            for (Country c : countries) {
-                System.out.println(c);
-            }
+            leerRecursivamente(countries, 0);
         } catch (Exception e) {
             e.printStackTrace();
         }

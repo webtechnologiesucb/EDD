@@ -74,4 +74,4 @@ public class MatrizTriangular {
         mostrarMatriz(triangularInferior);
     }
 }
-
+ 
