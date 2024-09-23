@@ -24,7 +24,6 @@
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="javafx.scene.canvas.GraphicsContext"/>
     <fullyQualifiedTypeName name="java.util.Objects"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="com.ucb.developer.Conexion"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="com.mysql.cj.xdevapi.Statement"/>
@@ -34,4 +33,5 @@
     <fullyQualifiedTypeName name="com.ucb.developer.Actor"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="com.ucb.developer.Country"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
 </qualifiedTypeNameHistroy>
