@@ -20,7 +20,8 @@ public class PlanPagos {
 
         @Override
         public String toString() {
-            return nNumero + "\t" + dFecha.toLocalDate() + "\t" + nCapital + "\t" + nInteres;
+            return nNumero + "\t" + dFecha.toLocalDate() + "\t" 
+            	+ nCapital + "\t" + nInteres;
         }
     }
 
@@ -31,7 +32,8 @@ public class PlanPagos {
             oLista = new LinkedList<>();
         }
 
-        public void agregarNodo(int cuota, LocalDateTime fecha, double capital, double interes) {
+        public void agregarNodo(int cuota, LocalDateTime fecha, double capital, 
+        		double interes) {
             Cuota oCuota = new Cuota(cuota, fecha, capital, interes);
             oLista.add(oCuota);
         }
@@ -72,6 +74,9 @@ public class PlanPagos {
         double montoPres;
         double interesPorc;
         double montoCuota;
+        double saldo = 0;
+        double tasaInteresPeriodica = 0;
+        double cuotaX = 0;
         int nCuotas;
         System.out.println("Ingresar Monto Prestamo: ");
         montoPres = oLector.nextDouble();
@@ -81,11 +86,13 @@ public class PlanPagos {
         nCuotas = oLector.nextInt();
         String cadInteres = String.format("%.4f", interesPorc / 100.0);
         interesPorc = Double.parseDouble(cadInteres.replace(',', '.'));
-        montoCuota = (interesPorc * (Math.pow((interesPorc + 1), nCuotas)) * montoPres) / ((Math.pow((interesPorc + 1), nCuotas)) - 1);
+        montoCuota = (interesPorc * (Math.pow((interesPorc + 1), nCuotas)) * montoPres) 
+        		/ ((Math.pow((interesPorc + 1), nCuotas)) - 1);
         System.out.println("Monto Cuota: " + montoCuota);
-        // double interesPagado = saldo * tasaInteresPeriodica;
-        // double capitalPagado = cuotaX - interesPagado;
-        // saldo -= capitalPagado; P=893,49   I=8,99   NC=7  CUOTA=177,47
+        double interesPagado = saldo * tasaInteresPeriodica;
+        double capitalPagado = cuotaX - interesPagado;
+        saldo -= capitalPagado; 
+        // P=893,49   I=8,99   NC=7  CUOTA=177,47
         // =(INTERES *(1+INTERES)^CUOTAS)*PRESTAMO/(((1+INTERES)^CUOTAS)-1)
         oLector.close();
     }
