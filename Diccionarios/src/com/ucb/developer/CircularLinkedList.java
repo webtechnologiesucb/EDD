@@ -8,7 +8,6 @@ import java.time.*;
 import java.util.Iterator;
 import java.util.Scanner;
 
-@SuppressWarnings("ALL")
 class Nodo<T> {
     private T dato;
     private Nodo<T> sig;
@@ -36,7 +35,6 @@ class Nodo<T> {
 }
 
 
-@SuppressWarnings("ALL")
 class CircularList<T> implements Iterable<Estudiante>  {
     Nodo<T> cab;
     Nodo<T> fin;
@@ -61,7 +59,6 @@ class CircularList<T> implements Iterable<Estudiante>  {
             nuevo.setSig(cab);
             fin = nuevo;
         } else {
-            Nodo<T> aux;
             fin.setSig(nuevo);
             nuevo.setSig(cab);
             fin = nuevo;
@@ -74,13 +71,15 @@ class CircularList<T> implements Iterable<Estudiante>  {
     }
 }
 
-@SuppressWarnings("ALL")
+
 class ListaCircularSimpleIterator implements Iterator<Estudiante> {
-    private Nodo aux;
+    @SuppressWarnings("rawtypes")
+	private Nodo aux;
+    @SuppressWarnings("rawtypes")
     private Nodo inicio;
     private boolean iteracion1;
 
-    public ListaCircularSimpleIterator(Nodo cab) {
+    public ListaCircularSimpleIterator(@SuppressWarnings("rawtypes") Nodo cab) {
         this.aux = cab;
         this.inicio = cab;
         this.iteracion1 = true;
@@ -103,7 +102,6 @@ class ListaCircularSimpleIterator implements Iterator<Estudiante> {
     }
 }
 
-@SuppressWarnings("ALL")
 public class CircularLinkedList {
     public static void main(String[] args) {
         Scanner oScan = new Scanner(System.in);
@@ -116,6 +114,7 @@ public class CircularLinkedList {
         LocalDateTime fecha = LocalDateTime.now();
         System.out.println(fecha);
         cargarArchivo(listado1, pagoMes, fecha);
+        oScan.close();
         /*
         System.out.println(fecha.plusMonths(3));
         System.out.println("La fecha actual es: " + LocalDate.now());
@@ -129,7 +128,6 @@ public class CircularLinkedList {
     private static void cargarArchivo(CircularList<Estudiante> listado1, BigDecimal cuota, LocalDateTime fecha) {
         try{
             String archivo = System.getProperty("user.dir") + "\\ejemplo.csv";
-            String[] linea;
             CsvReader estudiantes = new CsvReader(archivo);
             estudiantes.readHeaders();
             while (estudiantes.readRecord())

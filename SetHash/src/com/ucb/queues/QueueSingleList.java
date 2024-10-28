@@ -87,7 +87,8 @@ public class QueueSingleList {
     }
 
     public static void main(String[] args) {
-        Queue<Integer> one = new Queue() ;
+		@SuppressWarnings("rawtypes")
+		Queue<Integer> one = new Queue() ;
         one.agregar(3);
         one.agregar(6);
         one.agregar(9);

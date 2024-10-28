@@ -75,8 +75,10 @@ public class StackSingleList {
         }
     }
 
-    public static void main(String[] args) {
-        Stack<Integer> one = new Stack() ;
+    @SuppressWarnings("rawtypes")
+	public static void main(String[] args) {
+		@SuppressWarnings("unchecked")
+		Stack<Integer> one = new Stack() ;
         one.push(3);
         one.push(6);
         one.push(9);
